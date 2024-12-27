@@ -1,0 +1,43 @@
+<div class="fixed  top-0 left-0 z-10 w-full font-roboto bg-gradient-to-r from-purple to-silver text-white">
+  <div class="py-5 container bg-gradient-to-r from-purple to-silver text-white">
+    <div class="flex items-center lg:justify-between container border-emerald-500 border-opacity-30 rounded-xl">
+      <div class="py-2 text-4xl hidden lg:block">
+        Terra Logic
+      </div>
+
+      <div class="lg:hidden">
+        <svg (click)="this.openSideBar()" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
+        </svg>
+      </div>
+
+      <ul class="lg:flex hidden lg:block font-semibold text-white text-lg gap-8 xl:gap-14">
+        <li class="p-3" (click)="navigateToLogout()">Logout</li>
+      </ul>
+    </div>
+
+    <nav class="absolute w-full top-0 left-0 h-screen z-50 {{
+        isSidebarShowing ? 'flex' : 'hidden'
+      }}">
+      <div class="bg-white w-full md:max-w-sm shadow-2xl">
+        <div class="flex justify-end p-5">
+          <svg (click)="this.closeSideBar()" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-black1">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m-15 0l15 15" />
+          </svg>
+        </div>
+        <div>
+
+          <div class="mt-6">
+            <ul
+              class="lg:flex font-semibold text-black1 text-lg gap-8 xl:gap-14 flex flex-col items-center justify-center">
+              <li class="p-3" (click)="navigateToLogout()">Logout</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div (click)="this.closeSideBar()" class="bg-gray-900 hidden md:block md:w-full opacity-60"></div>
+    </nav>
+  </div>
+</div>

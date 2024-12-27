@@ -1,0 +1,26 @@
+mat-card {
+  min-width: 100%;
+  transition: transform 0.5s ease-in-out;
+  display: none;
+}
+
+mat-card.active {
+  display: block;
+}
+
+.nav-button {
+  background: white;
+  border-radius: 50%;
+  width: 40px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.mat-card-image {
+  margin: 0 !important;
+  border-radius: 20px !important;
+}
+.material-icons {
+  line-height: unset !important;
+}
+
+

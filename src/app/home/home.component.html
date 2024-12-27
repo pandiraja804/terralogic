@@ -1,0 +1,48 @@
+<app-header></app-header>
+
+<div>
+  <div class="container">
+    <div class="padd-t-130">
+      <div class="text-white text-4xl">Home</div>
+
+      <div class="row lg:flex justify-center text-white text-2xl">
+        Get All Album Photos
+      </div>
+    </div>
+
+    <div class="marg-t-20">
+      <div class="p-6 rounded-lg shadow-lg container bgCardClr">
+        <!-- Search Input -->
+        <div class="search-bar marg-b-20 flex justify-end">
+          <input type="text" placeholder="Search by Id" [(ngModel)]="searchQuery" (input)="applyFilter()"
+            class="form-control w-[500px] searchBox" />
+        </div>
+
+        <!-- Photo Gallery -->
+        <div class="gallery-grid lg:flex">
+          <div class="row lg:flex">
+            <div *ngFor="let photo of displayedPhotos" class="gallery-item bgrInsideCardClr">
+              <img class="text-center imgsize" [src]="photo.thumbnailUrl" [alt]="photo.title" />
+
+              <div class="mt-4">
+                <label for=""> <span class="fontWeigt-bold text-black">Album ID:</span> {{ photo.albumId }}</label>,
+                <label for=""> <span class="fontWeigt-bold text-black">ID:</span> {{ photo.id }}</label>
+              </div>
+
+
+              <div class="mt-2">
+                <h2 class="flex-wrap lg:w-[170px]"> <span class="fontWeigt-bold text-black">Title:</span> {{
+                  photo.title }}</h2>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <mat-paginator [length]="totalRecords" [pageSize]="pageSize" [pageSizeOptions]="[5]"
+          (page)="onPageChange($event)"></mat-paginator>
+      </div>
+    </div>
+
+  </div>
+</div>

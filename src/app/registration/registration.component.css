@@ -1,0 +1,5 @@
+mat-card {
+  min-width: 100%;
+  transition: transform 0.5s ease-in-out;
+  display: none;
+}
